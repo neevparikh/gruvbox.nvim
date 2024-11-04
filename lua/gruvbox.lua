@@ -128,7 +128,7 @@ Gruvbox.palette = {
 }
 
 -- get a hex list of gruvbox colors based on current bg and constrast config
-local function get_colors()
+Gruvbox.get_colors = function()
   local p = Gruvbox.palette
   local config = Gruvbox.config
 
@@ -210,8 +210,8 @@ local function get_colors()
   return color_groups[bg]
 end
 
-local function get_groups()
-  local colors = get_colors()
+Gruvbox.get_groups = function()
+  local colors = Gruvbox.get_colors()
   local config = Gruvbox.config
 
   if config.terminal_colors then
@@ -1241,7 +1241,7 @@ Gruvbox.load = function()
   vim.g.colors_name = "gruvbox"
   vim.o.termguicolors = true
 
-  local groups = get_groups()
+  local groups = Gruvbox.get_groups()
 
   -- add highlights
   for group, settings in pairs(groups) do
