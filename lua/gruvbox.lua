@@ -128,7 +128,7 @@ Gruvbox.palette = {
 }
 
 -- get a hex list of gruvbox colors based on current bg and constrast config
-Gruvbox.get_colors = function()
+Gruvbox.get_colors = function(contrast, bg)
   local p = Gruvbox.palette
   local config = Gruvbox.config
 
@@ -136,8 +136,8 @@ Gruvbox.get_colors = function()
     p[color] = hex
   end
 
-  local bg = vim.o.background
-  local contrast = config.contrast
+  bg = bg or vim.o.background
+  contrast = contrast or config.contrast
 
   local color_groups = {
     dark = {
@@ -210,8 +210,8 @@ Gruvbox.get_colors = function()
   return color_groups[bg]
 end
 
-Gruvbox.get_groups = function()
-  local colors = Gruvbox.get_colors()
+Gruvbox.get_groups = function(contrast, bg)
+  local colors = Gruvbox.get_colors(contrast, bg)
   local config = Gruvbox.config
 
   if config.terminal_colors then
