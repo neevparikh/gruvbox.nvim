@@ -1232,6 +1232,12 @@ Gruvbox.get_groups = function(contrast, bg)
       -- "link" should not mix with other configs (:h hi-link)
       groups[group].link = nil
     end
+    if hl["link"] then
+      local original = groups[hl["link"]]
+      local linked = vim.api.nvim_get_hl(0, { name = hl["link"], link = false })
+      hl["link"] = nil
+      hl = vim.tbl_extend("force", original or linked or {}, hl)
+    end
 
     groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
   end
