@@ -124,6 +124,14 @@ Gruvbox.palette = {
   light_aqua_hard = "#e6e9c1",
   light_aqua = "#e8e5b5",
   light_aqua_soft = "#e1dbac",
+  subtle_dark_brown = "#3b3307",
+  subtle_dark_green = "#142a03",
+  subtle_dark_red = "#431313",
+  subtle_dark_yellow = "#4d520d",
+  subtle_light_brown = "#fdd69b",
+  subtle_light_green = "#d5e958",
+  subtle_light_red = "#ffb3a2",
+  subtle_light_yellow = "#ffdb57",
   gray = "#928374",
 }
 
@@ -168,6 +176,10 @@ Gruvbox.get_colors = function(contrast, bg)
       dark_green = p.dark_green,
       dark_aqua = p.dark_aqua,
       gray = p.gray,
+      subtle_brown = p.subtle_dark_brown,
+      subtle_green = p.subtle_dark_green,
+      subtle_red = p.subtle_dark_red,
+      subtle_yellow = p.subtle_dark_yellow,
     },
     light = {
       bg0 = p.light0,
@@ -197,6 +209,10 @@ Gruvbox.get_colors = function(contrast, bg)
       dark_green = p.light_green,
       dark_aqua = p.light_aqua,
       gray = p.gray,
+      subtle_brown = p.subtle_light_brown,
+      subtle_green = p.subtle_light_green,
+      subtle_red = p.subtle_light_red,
+      subtle_yellow = p.subtle_light_yellow,
     },
   }
 
