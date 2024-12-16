@@ -1237,9 +1237,10 @@ Gruvbox.get_groups = function(contrast, bg)
       local linked = vim.api.nvim_get_hl(0, { name = hl["link"], link = false })
       hl["link"] = nil
       hl = vim.tbl_extend("force", original or linked or {}, hl)
+      groups[group] = hl
+    else
+      groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
     end
-
-    groups[group] = hl
   end
 
   return groups
