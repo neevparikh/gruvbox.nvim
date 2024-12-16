@@ -1228,18 +1228,18 @@ Gruvbox.get_groups = function(contrast, bg)
   }
 
   for group, hl in pairs(config.overrides) do
-    if groups[group] then
+    if groups[group] ~= nil then
       -- "link" should not mix with other configs (:h hi-link)
       groups[group].link = nil
     end
-    if hl["link"] then
+    if hl["link"] ~= nil then
       local original = groups[hl["link"]]
       local linked = vim.api.nvim_get_hl(0, { name = hl["link"], link = false })
       hl["link"] = nil
       hl = vim.tbl_extend("force", original or linked or {}, hl)
     end
 
-    groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
+    groups[group] = hl
   end
 
   return groups
