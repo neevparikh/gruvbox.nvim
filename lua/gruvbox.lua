@@ -1217,6 +1217,7 @@ Gruvbox.get_groups = function(contrast, bg)
     ["@lsp.type.interface"] = { link = "@constructor" },
     ["@lsp.type.macro"] = { link = "@macro" },
     ["@lsp.type.method"] = { link = "@method" },
+    ["@lsp.type.modifier.java"] = { link = "@keyword.type.java" },
     ["@lsp.type.namespace"] = { link = "@namespace" },
     ["@lsp.type.parameter"] = { link = "@parameter" },
     ["@lsp.type.property"] = { link = "@property" },
