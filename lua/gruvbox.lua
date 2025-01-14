@@ -71,6 +71,8 @@ Gruvbox.config = {
 -- main gruvbox color palette
 ---@class GruvboxPalette
 Gruvbox.palette = {
+  dark_minus_2 = "#090A0B",
+  dark_minus_1 = "#131516",
   dark0_hard = "#1d2021",
   dark0 = "#282828",
   dark0_soft = "#32302f",
@@ -78,6 +80,8 @@ Gruvbox.palette = {
   dark2 = "#504945",
   dark3 = "#665c54",
   dark4 = "#7c6f64",
+  light_minus_2 = "#FDFAEC",
+  light_minus_1 = "#FCF5D9",
   light0_hard = "#f9f5d7",
   light0 = "#fbf1c7",
   light0_soft = "#f2e5bc",
@@ -149,6 +153,8 @@ Gruvbox.get_colors = function(contrast, bg)
 
   local color_groups = {
     dark = {
+      bg_minus_2 = p.dark_minus_2,
+      bg_minus_1 = p.dark_minus_1,
       bg0 = p.dark0,
       bg1 = p.dark1,
       bg2 = p.dark2,
@@ -182,6 +188,8 @@ Gruvbox.get_colors = function(contrast, bg)
       subtle_yellow = p.subtle_dark_yellow,
     },
     light = {
+      bg_minus_2 = p.light_minus_2,
+      bg_minus_1 = p.light_minus_1,
       bg0 = p.light0,
       bg1 = p.light1,
       bg2 = p.light2,
