@@ -1238,6 +1238,9 @@ Gruvbox.get_groups = function(contrast, bg)
       hl["link"] = nil
       hl = vim.tbl_extend("force", original or linked or {}, hl)
       groups[group] = hl
+    elseif hl["replace"] then
+      hl["replace"] = nil
+      groups[group] = hl
     else
       groups[group] = vim.tbl_extend("force", groups[group] or {}, hl)
     end
